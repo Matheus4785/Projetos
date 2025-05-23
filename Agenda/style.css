@@ -1,0 +1,175 @@
+:root {
+  --cor-principal: #fdfdfd;
+  --cor-principal-hover: #fafafa;
+  --cor-fundo: #e1e1e1;
+  --cor-texto: #343a40;
+  --cor-borda: #6c757d;
+  --cor-ativo: #0d6efd;
+  --raio-borda: 6px;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  user-select: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--cor-texto);
+}
+
+header {
+  background-color: var(--cor-principal);
+  box-shadow: 0 5px 5px var(--cor-principal);
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+main {
+  flex: 1 1 auto;
+  padding: 0 1rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tarefa {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tarefa-checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Animação de fade in */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Animação de fade out */
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.filtro-dropdown {
+  position: relative;
+  max-width: 220px;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  background-color: #f8f9fa;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  user-select: none;
+}
+
+.dropdown-btn::after {
+  content: '▾';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--cor-borda);
+  pointer-events: none;
+}
+
+.dropdown-btn:hover {
+  border-color: #495057;
+}
+
+.dropdown-btn:focus {
+  outline: none;
+  border-color: var(--cor-ativo);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  background-color: #fff;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin-top: 0.25rem;
+  padding: 0;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  max-height: 180px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 100;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--cor-texto);
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: var(--cor-ativo);
+  color: #fff;
+}
+.modal-custom {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-conteudo {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#btnAdicionar {
+  z-index: 1055;
+}
