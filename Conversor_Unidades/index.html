@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Unidades</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Conversor de Unidades</h1>
+
+    <label for="category">Categoria:</label>
+    <select id="category">
+      <option value="time">Tempo</option>
+      <option value="distance">Distância</option>
+      <option value="force">Força</option>
+      <option value="weight">Peso</option>
+    </select>
+
+    <div class="converter">
+      <input type="number" id="inputValue" placeholder="Digite o valor" />
+
+      <select id="inputUnit"></select>
+
+      <span>→</span>
+
+      <select id="outputUnit"></select>
+
+      <div id="result">Resultado: —</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
